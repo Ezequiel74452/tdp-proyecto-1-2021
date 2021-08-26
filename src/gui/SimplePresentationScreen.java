@@ -10,15 +10,17 @@ import javax.swing.border.EmptyBorder;
 import entities.Student;
 import javax.swing.JTabbedPane;
 import java.awt.Toolkit;
-import java.net.URL;
-
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.ImageIcon;
+import javax.swing.Icon;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Image;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
 public class SimplePresentationScreen extends JFrame {
@@ -32,6 +34,7 @@ public class SimplePresentationScreen extends JFrame {
 	private JTextField textFieldNombre;
 	private JTextField textFieldApellido;
 	private JTextField textFieldLU;
+	private JLabel lblImage;
 
 	public SimplePresentationScreen(Student studentData) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(SimplePresentationScreen.class.getResource("/images/tdp.png")));
@@ -74,25 +77,26 @@ public class SimplePresentationScreen extends JFrame {
 		
 		textFieldGHURL = new JTextField();
 		textFieldGHURL.setEditable(false);
-		textFieldGHURL.setText("https://github.com/Ezequiel74452");
+		textFieldGHURL.setText(studentData.getGithubURL());
 		textFieldGHURL.setColumns(10);
 		
 		texFieldtEmail = new JTextField();
-		texFieldtEmail.setText("ezequielcaviglione@hotmail.com");
+		texFieldtEmail.setText(studentData.getMail());
 		texFieldtEmail.setEditable(false);
 		texFieldtEmail.setColumns(10);
 		
 		textFieldNombre = new JTextField();
-		textFieldNombre.setText("Isa\u00ED Ezequiel");
+		textFieldNombre.setText(studentData.getFirstName());
 		textFieldNombre.setEditable(false);
 		textFieldNombre.setColumns(10);
 		
 		textFieldApellido = new JTextField();
 		textFieldApellido.setEditable(false);
-		textFieldApellido.setText("Garc\u00EDa Caviglione");
+		textFieldApellido.setText(studentData.getLastName());
 		textFieldApellido.setColumns(10);
 		
 		textFieldLU = new JTextField();
+		textFieldLU.setText(String.valueOf(studentData.getId()));
 		textFieldLU.setEditable(false);
 		textFieldLU.setColumns(10);
 		GroupLayout gl_tabInformation = new GroupLayout(tabInformation);
@@ -149,9 +153,8 @@ public class SimplePresentationScreen extends JFrame {
 		tabInformation.setLayout(gl_tabInformation);
 		contentPane.add(tabbedPane, BorderLayout.WEST);
 		
-		URL url = new URL("/images/RubyEpicGif.gif");
-	    Icon icon = new ImageIcon();
-		JLabel lblImagen = new JLabel("");
-		contentPane.add(lblImagen, BorderLayout.EAST);
+		lblImage = new JLabel("");
+		lblImage.setIcon(new ImageIcon(SimplePresentationScreen.class.getResource("/images/Kur.png")));
+		contentPane.add(lblImage, BorderLayout.EAST);
 	}
 }

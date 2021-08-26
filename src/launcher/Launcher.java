@@ -9,7 +9,7 @@ public class Launcher {
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-            	Student IEGC = new Student(74452, "García Caviglione", "Isaí Ezequiel", "ezequielcaviglione@hotmail.com", "https://github.com/Ezequiel74452", "https://avatars.githubusercontent.com/u/60025474?v=4");
+            	Student IEGC = new Student(131376, "García Caviglione", "Isaí Ezequiel", "ezequielcaviglione@hotmail.com", "https://github.com/Ezequiel74452", "https://avatars.githubusercontent.com/u/60025474?v=4");
             	try {
             		SimplePresentationScreen sps = new SimplePresentationScreen(IEGC);
             		sps.setVisible(true);
