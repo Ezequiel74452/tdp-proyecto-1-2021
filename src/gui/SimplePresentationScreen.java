@@ -10,6 +10,8 @@ import javax.swing.border.EmptyBorder;
 import entities.Student;
 import javax.swing.JTabbedPane;
 import java.awt.Toolkit;
+import java.time.LocalDateTime;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.Icon;
@@ -156,5 +158,9 @@ public class SimplePresentationScreen extends JFrame {
 		lblImage = new JLabel("");
 		lblImage.setIcon(new ImageIcon(SimplePresentationScreen.class.getResource("/images/Kur.png")));
 		contentPane.add(lblImage, BorderLayout.EAST);
+		
+		JLabel lblTime = new JLabel("Esta ventana fue generada el " + java.time.LocalDate.now() + " a las: " + java.time.LocalTime.now());
+		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		contentPane.add(lblTime, BorderLayout.SOUTH);
 	}
 }
